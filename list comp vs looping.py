@@ -2,6 +2,8 @@
 rather than looping through a list and appending values to a new list. The example below
 demonstrates an example of each.'''
 
+
+#The class and function below are set up to be used in the function examples that come afterwards (example 1&2)
 class car:
     def __init__(self, name, mpg):
         self._name = name
@@ -21,6 +23,13 @@ def max_val(vals):
                 max = val
     return max
 
+
+
+#Examples are below:
+#-------------------------------------
+
+#Example 1: Using a list to append new values
+
 def find_highest_mpg(cars):
     ''' this creates a new list - MPG, and appends each element that is selected/filtered
      in the list comprehension below. There is no need to create an empty list and explicitly append
@@ -28,12 +37,19 @@ def find_highest_mpg(cars):
     MPG = [car.get_mpg() for car in cars]
     return max_val(MPG)
 
+
+#-------------------------------------
+
+#Example 2:
+
+#Using list comprehension
+
 def find_highest_mpg2(cars):
     MPG = []
     for car in cars:
         MPG.append(car.get_mpg())
     return max_val(MPG)
-
+#-------------------------------------
 
 hyundai = car("Sonata", 37)
 honda = car("Accord", 35)
